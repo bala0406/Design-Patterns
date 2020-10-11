@@ -22,7 +22,7 @@ namespace DesignPatterns
             this.cockpit = cockpit;
         }
 
-        public string GetCockpit(string cockpit)
+        public string GetCockpit()
         {
             return this.cockpit;
         }
@@ -32,7 +32,7 @@ namespace DesignPatterns
             this.engine = engine;
         }
 
-        public string GetEngine(string engine)
+        public string GetEngine()
         {
             return this.engine;
         }
@@ -42,7 +42,7 @@ namespace DesignPatterns
             this.wings = wings;
         }
 
-        public string GetWings(string wings)
+        public string GetWings()
         {
             return this.wings;
         }
@@ -52,11 +52,12 @@ namespace DesignPatterns
             this.bathrooms = bathrooms;
         }
 
-        public string GetBathrooms(string bathrooms)
+        public string GetBathrooms()
         {
             return this.bathrooms;
         }
     }
+
 
     public interface IAirCraftBuilder
     {
@@ -174,8 +175,11 @@ namespace DesignPatterns
             director.ConstructAirCraft(isPassenger: false);       //engineer constructs the aircraft
             AirCraft airCraft1 = director.GetAirCraft();          // the engineer returns the robot after building the aircraft
 
-            Console.WriteLine("Aircraft Constructed" + airCraft1);
-
+            Console.WriteLine("Aircraft Constructed: " + airCraft1);
+            Console.WriteLine("aircraft engine: " + airCraft1.GetEngine());
+            Console.WriteLine("aircraft cockpit: " + airCraft1.GetCockpit());
+            Console.WriteLine("aircraft wings: " + airCraft1.GetWings());
+            Console.WriteLine("aircraft bathroom: " + airCraft1.GetBathrooms());
         }
     }
 }
